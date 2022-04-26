@@ -1,10 +1,13 @@
 @charset "UTF-8";
 
 body {
+  font-family: "Catamaran", sans-serif;
+  box-sizing: border-box;
+  color: #102a42;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -12,9 +15,840 @@ img {
   display: block;
 }
 
-.btn{
-
+h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  line-height: 1em;
+  letter-spacing: 4px;
 }
-.btn:hover{
-    
+h2 {
+  font-size: 2.5rem;
+  color: #102a42;
+}
+
+.different_font {
+  font-family: "Grand Hotel", cursive;
+  color: #678e3e;
+}
+
+.sentence_account_blue {
+  font-size: 1rem;
+  color: #617d98;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn a {
+  text-align: center;
+  background-color: #678e3e;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.btn a:hover {
+  background-color: #9bd65d;
+  color: #3f5625;
+}
+
+.br_pc {
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  .br-sp {
+    display: none;
+  }
+  .br_pc {
+    display: inherit;
+  }
+}
+
+/* ---------------------------------
+---------common-------------------- */
+
+.area_title_common {
+  margin-bottom: 30px;
+}
+
+.sentence_common_subtitle {
+  font-size: 2rem;
+}
+
+.area_article_tea_station > .sentence_account_blue {
+  text-align: left;
+  font-size: 3.1vw;
+  margin: 20px 0px;
+}
+
+.btn_common {
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  letter-spacing: 4px;
+}
+
+.btn_common a {
+  padding: 5px 12px 7px 12px;
+}
+
+/* -------------------------------------------
+　　　　　　　画面に固定表示のCSS(147行まで)
+----------------------------------------------*/
+/*------btn-gNav---------
+-------------------------*/
+
+#area_btn_gNav {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 50px;
+  left: 5%;
+  z-index: 3;
+  animation: btnNavAnime 0.8s infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+#area_btn_gNav.open {
+  display: none;
+}
+
+#area_btn_gNav > span {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: #678e3e;
+}
+
+#area_btn_gNav > span:nth-child(1) {
+  top: 0px;
+}
+
+#area_btn_gNav > span:nth-child(2) {
+  top: 0.6em;
+}
+
+#area_btn_gNav > span:nth-child(3) {
+  top: 1.2em;
+}
+
+/* -------btn-gNav-animation ----------*/
+@keyframes btnNavAnime {
+  from {
+    transform: scale(1, 1);
+  }
+
+  to {
+    transform: scale(1.8, 1.8);
+  }
+}
+
+/*---------- gNav -open----------------
+---------------------------------------*/
+
+#area_gNav-menu_open {
+  position: fixed;
+  display: none;
+  width: 43%;
+  /* 全体の33% */
+  height: 100%;
+  background-color: #f1f5f8;
+  top: 0;
+  left: -43%;
+  transition: all 2s;
+  z-index: 4;
+}
+
+#area_gNav-menu_open.open {
+  display: inherit;
+  animation: btn_open 0.8s;
+  animation-fill-mode: forwards;
+  transition: 2s ease-in-out;
+}
+@keyframes btn_open {
+  from {
+    left: -43%;
+  }
+
+  to {
+    left: -0%;
+  }
+}
+@media screen and (max-width: 800px) {
+  #area_gNav-menu_open {
+    width: 100%;
+    left: -100%;
+  }
+  @keyframes btn_open {
+    from {
+      left: -100%;
+    }
+
+    to {
+      left: -0%;
+    }
+  }
+
+  .area_Nav_menu li {
+    padding: 8px 0;
+    text-align: center;
+  }
+}
+
+/*--------- gNav-menu---------- */
+
+.area_Nav_menu {
+  width: 100%;
+  padding-top: 80px;
+  color: #a8a7a7;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.area_Nav_menu li {
+  padding: 8px 2%;
+}
+
+.area_Nav_menu li:hover {
+  background-color: #b7f575;
+  border-left: 4px solid #4f7129;
+  transition: 0.3s;
+}
+
+/*--------- gNav-btn ---------*/
+#area_gNav_click_btn_close {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#area_gNav_click_btn_close span {
+  width: 30px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: rgb(234, 109, 109);
+  position: absolute;
+}
+
+#area_gNav_click_btn_close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+#area_gNav_click_btn_close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+/* -------------------------------------------
+　　　　　　　画面に固定表示のCSS end
+----------------------------------------------*/
+
+/*----------------------------------
+----------main-visual-------------*/
+
+#area_section_main-visual {
+  width: 100%;
+  height: 800px;
+  background-image: url(../img/img_main-visual.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+#area_section_main-visual::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 800px;
+}
+
+#area_section_main-visual > .container {
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.sentence_main-visu {
+  animation: sentence_move 5s ease;
+}
+
+@keyframes sentence_move {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0.2;
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  80% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.sentence_main-visu_subtitle {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  animation: sentence_sub_move 5s ease;
+}
+
+@keyframes sentence_sub_move {
+  0% {
+    transform: translateX(200%);
+    opacity: 0.2;
+  }
+  40% {
+    transform: translateX(-40%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.btn_main-visual {
+  margin-top: 40px;
+  padding: 5px;
+  border: 2px solid #678e3e;
+  font-weight: bolder;
+  animation: btn_main-visual 4s forwards ease-in-out;
+}
+
+.btn_main-visual a {
+  padding: 20px 40px;
+}
+
+@keyframes btn_main-visual {
+  0% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .sentence_main-visu {
+    font-size: 4rem;
+  }
+
+  .sentence_main-visu_subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* -----------------------------------
+--------various_items----------------- */
+
+#area_section_various_items {
+  width: 100%;
+  background-color: #f1f5f8;
+}
+
+#area_section_various_items > .container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.area_various_item {
+  text-align: center;
+  width: 100%;
+  height: 230px;
+  background-color: #f1f5f8;
+  box-sizing: border-box;
+}
+
+.area_various_item:hover {
+  background-color: #ffffff;
+  border-bottom: 2px solid #678e3e;
+}
+
+.color_icon_various_item {
+  margin-top: 50px;
+  color: #678e3e;
+}
+
+.area_various_item:hover + .color_icon_various_item {
+  margin-top: 45px;
+}
+
+.title_various_item {
+  margin: 30px 0px 15px 0;
+  letter-spacing: 4px;
+  line-height: 1em;
+}
+
+@media screen and (min-width: 650px) {
+  .area_various_item {
+    width: 50%;
+  }
+
+  .area_various_item > .sentence_account_blue {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .area_various_item {
+    width: 50%;
+  }
+
+  .area_various_item > .sentence_account_blue {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .area_various_item {
+    width: 25%;
+  }
+
+  .area_various_item > .sentence_account_blue {
+    font-size: 0.8rem;
+  }
+}
+
+/* --------------------------------------
+----------tea-station-------------------- */
+
+#area_section_tea_station {
+  width: 100%;
+}
+
+#area_section_tea_station > .container {
+  padding: 104px 0;
+  width: 94%;
+}
+
+.area_img_tea_station {
+  width: 100%;
+  overflow: hidden;
+  border: #678e3e solid 6px;
+  background-color: #9bd65d;
+}
+
+.img_tea_station {
+  width: 100%;
+  object-fit: cover;
+}
+.img_tea_station:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+  opacity: 0.8;
+}
+
+.area_article_tea_station {
+  width: 100%;
+  margin-top: 40px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++
+      articleの内容は上記６９行目のcommonを使用 
++++++++++++++++++++++++++++++++++++++++++++++*/
+
+@media screen and (min-width: 580px) {
+  .area_article_tea_station > .sentence_account_blue {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #area_section_tea_station > .container {
+    width: 95%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 104px auto;
+  }
+
+  .area_img_tea_station {
+    width: 50%;
+    border: #678e3e solid 8px;
+  }
+
+  .area_article_tea_station {
+    width: 45.75%;
+    margin-top: 0px;
+  }
+
+  .area_article_tea_station > .sentence_account_blue {
+    font-size: 1rem;
+    margin: 20px 0px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .area_img_tea_station {
+    width: 45.75%;
+    height: 320px;
+    margin-left: 0;
+  }
+
+  .area_article_tea_station {
+    width: 45.75%;
+  }
+}
+/* -------------------------------------
+-------------our-product----------------- */
+
+#area_section_our_product {
+  padding: 80px 0 40px 0;
+  width: 100%;
+  background-color: #f1f5f8;
+}
+
+#area_section_our_product > .container {
+  width: 94%;
+  /* display: flex; */
+}
+
+.area_article_our_product {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/*-+++++++++++++++++++++++++++++++++++++++++++++++:
+ article　の中身に関しては上記の69行のcommonを使用 
+ ++++++++++++++++++++++++++++++++++++++++++++++++++-*/
+
+.area_article_our_product > .sentence_account_blue {
+  text-align: left;
+  font-size: 3.1vw;
+  margin: 20px 0px;
+  line-height: 1.5em;
+}
+
+.area_items_our_product {
+  border-radius: 10px 10px;
+}
+
+.img_our_product-sp {
+  margin: 30px 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product_price {
+  color: #678e3e;
+  margin-top: 10px;
+}
+
+.img_our_product {
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  #area_section_our_product > .container {
+    width: 94%;
+  }
+
+  .area_article_our_product {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .area_item_flex_our_product {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .area_items_our_product {
+    width: calc(calc(100% - 8.8%) / 3);
+  }
+
+  .img_our_product-sp {
+    display: none;
+  }
+
+  .img_our_product {
+    display: inherit;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+
+  .product_price {
+    color: #678e3e;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #area_section_our_product {
+    padding: 80px 0;
+  }
+
+  #area_section_our_product > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+  }
+
+  .area_article_our_product {
+    width: 35%;
+    margin-bottom: 0px;
+  }
+
+  .area_item_flex_our_product {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .area_article_our_product > .sentence_account_blue {
+    font-size: 0.8rem;
+    margin: 20px 0px;
+  }
+}
+
+/* --------------------------------------------------
+-----------------------service---------------------- */
+
+#area_section_service {
+  width: 100%;
+}
+
+#area_section_service > .container {
+  width: 94%;
+}
+
+.area_title_service {
+  text-align: center;
+  padding: 58px 0px 28px 0;
+}
+
+.area_flex-item_service {
+  width: 100%;
+}
+
+.area_item_service {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 30px;
+}
+
+.area_icon_service {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: -35px;
+  text-align: center;
+  display: inline-block;
+  background-color: #b7f575;
+  border: #ffffff solid 6px;
+  border-radius: 35px;
+}
+
+.icon_service_color {
+  color: #3f5625;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.area_item_service:hover {
+  transform: scale(1.008);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img_service {
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.area_article_service {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 238px;
+  background-color: #f1f5f8;
+  text-align: center;
+  padding: 40px 0px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.area_article_service > .sentence_account_blue {
+  font-size: 0.8rem;
+  margin: 16px 0px 27px 0px;
+  line-height: 1.5em;
+}
+
+.btn_service a {
+  padding: 7px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  line-height: 1.125em;
+  letter-spacing: 4px;
+}
+
+@media screen and (min-width: 650px) {
+  .area_flex-item_service {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .area_item_service {
+    width: calc(97% / 3);
+  }
+
+  .area_article_service > .sentence_account_blue {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (min-width: 950px) {
+  .area_article_service > .sentence_account_blue {
+    font-size: 0.8rem;
+  }
+}
+
+#area_section_info {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #f1f5f8;
+}
+
+#area_section_info > .container {
+  width: 94%;
+  /* display: flex; */
+}
+
+.area_article_info {
+  width: 100%;
+}
+
+.subtitle_info {
+  margin: 0 0 10px 28px;
+  font-size: 1rem;
+  color: #678e3e;
+}
+.account_info {
+  color: #617d98;
+  margin-bottom: 30px;
+}
+.title_input {
+  color: #617d98;
+  font-size: 2rem;
+  letter-spacing: 4px;
+  margin: 0px 0 28px 0;
+}
+.area_input_text {
+  padding-top: 20px;
+}
+.area_submit_info {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.submit_text {
+  display: block;
+  background-color: #f1f5f8;
+  width: 90%;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.submit_textarea {
+  display: block;
+  background-color: #f1f5f8;
+  width: 90%;
+  height: 100px;
+  border-radius: 10px;
+  margin: 10px auto 30px auto;
+}
+.btn_submit {
+  width: 100%;
+}
+.btn_submit a {
+  width: 100%;
+  padding: 16px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media screen and (min-width: 650px) {
+  #area_section_info > .container {
+    width: 94%;
+    display: flex;
+  }
+
+  .area_article_info {
+    width: 50%;
+  }
+
+  .area_submit_info {
+    width: 50%;
+  }
+}
+/* -------------------------------------
+------------footer----------------------- */
+.footer {
+  width: 100%;
+  height: 212px;
+  background-color: black;
+}
+.footer > .container {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  letter-spacing: 0.25em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  font-size: 3vw;
+}
+
+.area_icon_SNS {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.fa-brands {
+  color: #ffffff;
+}
+
+.footer_different_color {
+  color: #678e3e;
+}
+
+@media screen and (min-width: 650px) {
+  .footer > .container {
+    font-size: 1rem;
+  }
 }
