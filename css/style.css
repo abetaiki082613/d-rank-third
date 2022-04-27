@@ -53,6 +53,7 @@ h2 {
   background-color: #678e3e;
   color: #ffffff;
   display: inline-block;
+  transition: 0.3s;
 }
 
 .btn a:hover {
@@ -169,6 +170,7 @@ h2 {
   left: -43%;
   transition: all 2s;
   z-index: 4;
+  transition: 0.3s;
 }
 
 #area_gNav-menu_open.open {
@@ -192,6 +194,7 @@ h2 {
   display: inherit;
   animation: btn_close 0.8s;
   animation-fill-mode: forwards;
+  transition: 0.3s;
 }
 
 @keyframes btn_close {
@@ -247,18 +250,28 @@ h2 {
 }
 
 .area_Nav_menu li {
-  padding: 8px 2%;
+  transition: 0.3s;
+  box-sizing: border-box;
+  padding: 0;
 }
 .area_Nav_menu a {
+  padding: 8px 2%;
   display: inline-block;
   width: 100%;
   height: 100%;
+  transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .area_Nav_menu li:hover {
   background-color: #b7f575;
   border-left: 4px solid #4f7129;
   transition: 0.3s;
+}
+
+.area_Nav_menu a:hover {
+  transition: 0.3s;
+  transform: translateX(10px);
 }
 
 /*--------- gNav-btn ---------*/
@@ -271,10 +284,12 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn_close {
   color: rgb(234, 109, 109);
+  transition: 0.3s;
 }
 
 .btn_close:hover {
@@ -422,6 +437,7 @@ h2 {
   height: 230px;
   background-color: #f1f5f8;
   box-sizing: border-box;
+  transition: 0.3s;
 }
 
 .area_various_item:hover {
@@ -434,6 +450,7 @@ h2 {
 .color_icon_various_item {
   margin-top: 50px;
   color: #678e3e;
+  transition: 0.3s;
 }
 
 .area_various_item:hover > .color_icon_various_item {
@@ -498,6 +515,8 @@ h2 {
 .img_tea_station {
   width: 100%;
   object-fit: cover;
+  transform: scale(1);
+  transition: 0.3s;
 }
 .img_tea_station:hover {
   transform: scale(1.2);
@@ -699,6 +718,7 @@ h2 {
   width: 100%;
   margin-bottom: 30px;
   border-radius: 30px;
+  transition: 0.3s;
 }
 
 .area_icon_service {
@@ -717,6 +737,7 @@ h2 {
   color: #3f5625;
   margin-top: 12px;
   margin-left: 5px;
+  transition: 0.3s;
 }
 
 .area_item_service:hover {
@@ -853,7 +874,7 @@ h2 {
   border-bottom-right-radius: 10px;
   transition: 0.3s;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 800px) {
   #area_section_info > .container {
     width: 94%;
     display: flex;
@@ -895,6 +916,7 @@ h2 {
 
 .fa-brands {
   color: #ffffff;
+  transition: 0.3s;
 }
 .fa-brands:hover {
   color: #678e3e;
