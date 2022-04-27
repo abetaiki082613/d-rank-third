@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Catamaran", sans-serif;
   box-sizing: border-box;
@@ -9,6 +13,10 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.close {
+  transition: 0.1s;
 }
 
 img {
@@ -50,6 +58,8 @@ h2 {
 .btn a:hover {
   background-color: #9bd65d;
   color: #3f5625;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .br_pc {
@@ -166,15 +176,33 @@ h2 {
   animation-fill-mode: forwards;
   transition: 2s ease-in-out;
 }
+
 @keyframes btn_open {
   from {
     left: -43%;
   }
 
   to {
-    left: -0%;
+    left: 0%;
   }
 }
+
+#area_gNav-menu_open.close {
+  display: inherit;
+  animation: btn_close 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes btn_close {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: -43%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   #area_gNav-menu_open {
     width: 100%;
@@ -186,7 +214,17 @@ h2 {
     }
 
     to {
-      left: -0%;
+      left: 0%;
+    }
+  }
+
+  @keyframes btn_close {
+    from {
+      left: 0%;
+    }
+
+    to {
+      left: -43%;
     }
   }
 
@@ -209,6 +247,11 @@ h2 {
 
 .area_Nav_menu li {
   padding: 8px 2%;
+}
+.area_Nav_menu a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
 
 .area_Nav_menu li:hover {
@@ -235,6 +278,8 @@ h2 {
 
 .btn_close:hover {
   color: rgb(209, 42, 42);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 /* -------------------------------------------
@@ -285,17 +330,21 @@ h2 {
     transform: translateX(-200%);
     opacity: 0.2;
   }
+
   20% {
     transform: translateX(40%);
   }
+
   60% {
     transform: translateX(-20%);
   }
+
   100% {
     transform: translateX(0%);
     opacity: 1;
   }
 }
+
 .sentence_main-visu_subtitle {
   font-size: 2.5rem;
   margin-bottom: 30px;
@@ -375,8 +424,10 @@ h2 {
 }
 
 .area_various_item:hover {
+  transition: 0.1s;
   background-color: #ffffff;
   border-bottom: 2px solid #678e3e;
+  cursor: pointer;
 }
 
 .color_icon_various_item {
@@ -386,6 +437,7 @@ h2 {
 
 .area_various_item:hover > .color_icon_various_item {
   transform: translateY(-5px);
+  transition: 0.1s;
 }
 
 .title_various_item {
@@ -450,6 +502,8 @@ h2 {
   transform: scale(1.2);
   transition-duration: 0.3s;
   opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .area_article_tea_station {
@@ -703,6 +757,7 @@ h2 {
   font-size: 0.75rem;
   line-height: 1.125em;
   letter-spacing: 4px;
+  transition: 0.3s;
 }
 
 @media screen and (min-width: 650px) {
@@ -795,6 +850,7 @@ h2 {
   padding: 16px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  transition: 0.3s;
 }
 @media screen and (min-width: 650px) {
   #area_section_info > .container {
@@ -839,7 +895,11 @@ h2 {
 .fa-brands {
   color: #ffffff;
 }
-
+.fa-brands:hover {
+  color: #678e3e;
+  transition: 0.3s;
+  cursor: pointer;
+}
 .footer_different_color {
   color: #678e3e;
 }
