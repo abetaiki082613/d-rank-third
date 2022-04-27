@@ -129,6 +129,7 @@ h2 {
   width: 30px;
   height: 4px;
   background-color: #678e3e;
+  cursor: pointer;
 }
 
 #area_btn_gNav > span:nth-child(1) {
@@ -224,7 +225,7 @@ h2 {
     }
 
     to {
-      left: -43%;
+      left: -100%;
     }
   }
 
@@ -424,7 +425,7 @@ h2 {
 }
 
 .area_various_item:hover {
-  transition: 0.1s;
+  transition: 0.3s;
   background-color: #ffffff;
   border-bottom: 2px solid #678e3e;
   cursor: pointer;
@@ -437,7 +438,7 @@ h2 {
 
 .area_various_item:hover > .color_icon_various_item {
   transform: translateY(-5px);
-  transition: 0.1s;
+  transition: 0.3s;
 }
 
 .title_various_item {
