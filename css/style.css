@@ -168,7 +168,6 @@ h2 {
   background-color: #f1f5f8;
   top: 0;
   left: -43%;
-  transition: all 2s;
   z-index: 4;
   transition: 0.3s;
 }
@@ -190,7 +189,7 @@ h2 {
   }
 }
 
-#area_gNav-menu_open.close {
+#area_gNav-menu_open.close_menu {
   display: inherit;
   animation: btn_close 0.8s;
   animation-fill-mode: forwards;
@@ -343,7 +342,7 @@ h2 {
 
 @keyframes sentence_move {
   0% {
-    transform: translateX(-200%);
+    transform: translateX(-80%);
     opacity: 0.2;
   }
 
@@ -369,7 +368,7 @@ h2 {
 
 @keyframes sentence_sub_move {
   0% {
-    transform: translateX(200%);
+    transform: translateX(80%);
     opacity: 0.2;
   }
   20% {
@@ -849,20 +848,33 @@ h2 {
 }
 
 .submit_text {
+  text-align: left;
+  position: relative;
   display: block;
   background-color: #f1f5f8;
   width: 90%;
   height: 40px;
   margin: 10px auto;
   border-radius: 10px;
+  text-indent: 10px;
 }
 .submit_textarea {
-  display: block;
+  vertical-align: top;
+  text-align: left;
+  position: relative;
+  display: inline;
   background-color: #f1f5f8;
   width: 90%;
   height: 100px;
   border-radius: 10px;
   margin: 10px auto 30px auto;
+  text-indent: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  position: absolute;
+  top: 10px;
 }
 .btn_submit {
   width: 100%;
